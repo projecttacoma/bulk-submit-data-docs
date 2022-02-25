@@ -1,0 +1,23 @@
+﻿BulkSubmitData : Validation Results
+=========================================
+
+err = 1, warn = 1, info = 0
+IG Publisher Version: 1.1.107 Out of date - current version is 1.1.108
+Generated Fri Feb 25 10:52:50 EST 2022. FHIR version 4.0.1 for bulk-submit-data#4.0.1 (canonical = https://projecttacoma.github.io/bulk-submit-data-docs)
+ Build Errors : 8 / 0 / 0
+ /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/fsh-generated/resources/ImplementationGuide-bulk-submit-data : 0 / 0 / 1
+ /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/fsh-generated/resources/operationdefinition-measure-bulk-submit-data : 1 / 1 / 1
+</table>
+== n/a ==
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/OperationDefinition-measure-bulk-submit-data.change.history.html#/html/body/div/div/div/p/a at Line 207, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/OperationDefinition-measure-bulk-submit-data.html#/html/body/div/div/div/p/a at Line 259, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/OperationDefinition-measure-bulk-submit-data.json.html#/html/body/div/div/div/p/a at Line 264, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/OperationDefinition-measure-bulk-submit-data.ttl.html#/html/body/div/div/div/p/a at Line 277, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/OperationDefinition-measure-bulk-submit-data.xml.html#/html/body/div/div/div/p/a at Line 275, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/artifacts.html#/html/body/div/div/div/p/a at Line 186, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/index.html#/html/body/div/div/div/p/a at Line 203, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+ERROR: /Users/smcdougall/abacus/bulk-submit-data-docs/BulkSubmitData/output/toc.html#/html/body/div/div/div/p/a at Line 145, column 28: The link '' for "The MITRE Corporation" cannot be resolved
+== fsh-generated/resources/ImplementationGuide-bulk-submit-data.json ==
+== fsh-generated/resources/OperationDefinition-measure-bulk-submit-data.json ==
+ERROR: OperationDefinition.url: Resource id/url mismatch: measure-bulk-submit-data/https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data
+WARNING: OperationDefinition/measure-bulk-submit-data: OperationDefinition: opd-0: 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Rule 'Name should be usable as an identifier for the module by machine processing applications such as code generation' Failed

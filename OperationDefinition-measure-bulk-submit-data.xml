@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="measure-bulk-submit-data"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Bulk Submit Data</h2><p>OPERATION: Bulk Submit Data</p><p>The official URL for this operation definition is: </p><pre>https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data</pre><div><p>The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard <a href="http://hl7.org/fhir/R4/operation-measure-submit-data.html">$submit-data requests</a>, the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements.</p>
+<p>Required header(s):</p>
+<pre><code>'prefer': 'respond-async'
+</code></pre>
+</div><p>URL: [base]/Measure/$submit-data</p><p>URL: [base]/Measure/[id]/$submit-data</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>measureReport</td><td>1..1</td><td><a href="http://hl7.org/fhir/R4/measurereport.html">MeasureReport</a></td><td/><td><div><p>The measure report being submitted, which references the measure-of-interest by canonical URL</p>
+</div></td></tr><tr><td>IN</td><td>exportUrl</td><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td/><td><div><p>The absolute URL of the bulk export endpoint of a bulk export server</p>
+</div></td></tr></table><div><p>The expected responses from the bulk submit-data operation match the expected responses for the standard <a href="https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md">bulk import operation</a>.</p>
+</div></div>
+  </text>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use"/>
+  </extension>
+  <url value="https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data"/>
+  <version value="4.0.1"/>
+  <name value="Bulk Submit Data"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2022-02-25T10:52:40-05:00"/>
+  <publisher value="The MITRE Corporation"/>
+  <description value="The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard [$submit-data requests](http://hl7.org/fhir/R4/operation-measure-submit-data.html), the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements. &#xA;&#xA;Required header(s):&#xA;```&#xA;&#39;prefer&#39;: &#39;respond-async&#39;&#xA;```"/>
+  <code value="submit-data"/>
+  <comment value="The expected responses from the bulk submit-data operation match the expected responses for the standard [bulk import operation](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md)."/>
+  <resource value="Measure"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="measureReport"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The measure report being submitted, which references the measure-of-interest by canonical URL"/>
+    <type value="MeasureReport"/>
+  </parameter>
+  <parameter>
+    <name value="exportUrl"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The absolute URL of the bulk export endpoint of a bulk export server"/>
+    <type value="url"/>
+  </parameter>
+</OperationDefinition>

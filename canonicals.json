@@ -1,0 +1,16 @@
+[
+  {
+    "id": "bulk-submit-data",
+    "type": "ImplementationGuide",
+    "url": "https://projecttacoma.github.io/bulk-submit-data-docs/ImplementationGuide/bulk-submit-data",
+    "version": "4.0.1",
+    "name": "BulkSubmitData"
+  },
+  {
+    "id": "measure-bulk-submit-data",
+    "type": "OperationDefinition",
+    "url": "https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data",
+    "version": "4.0.1",
+    "name": "Bulk Submit Data"
+  }
+]
