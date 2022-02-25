@@ -1,3 +1,3 @@
-# BulkSubmitData
+# Bulk Submit Data
 
-Feel free to modify this index page with your own awesome content!
+This page provides the OperationDefinition for the bulk `$submit-data` operation.
