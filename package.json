@@ -1,0 +1,21 @@
+{
+  "name": "bulk-submit-data-docs",
+  "version": "1.0.0",
+  "description": "Documentation for the bulk submit data operation",
+  "homepage": "https://projecttacoma.github.io/bulk-submit-data-docs",
+  "scripts": {
+    "deploy": "gh-pages -d output"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projecttacoma/bulk-submit-data-docs.git"
+  },
+  "author": "The MITRE Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/projecttacoma/bulk-submit-data-docs/issues"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
