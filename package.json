@@ -4,7 +4,7 @@
   "description": "Documentation for the bulk submit data operation",
   "homepage": "https://projecttacoma.github.io/bulk-submit-data-docs",
   "scripts": {
-    "deploy": "gh-pages -d output"
+    "deploy": "gh-pages -d BulkSubmitData/output"
   },
   "repository": {
     "type": "git",
