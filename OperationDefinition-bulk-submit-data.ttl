@@ -1,0 +1,64 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data> a fhir:OperationDefinition;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "bulk-submit-data"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>Bulk Submit Data</h2><p>OPERATION: Bulk Submit Data</p><p>The official URL for this operation definition is: </p><pre>https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data</pre><div><p>The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the <a href=\"https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md\">Bulk Data Import Ping and Pull Approach</a>.</p>\n</div><p>URL: [base]/Measure/$submit-data</p><p>URL: [base]/Measure/[id]/$submit-data</p><p>Parameters</p><table class=\"grid\"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>measureReport</td><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/measurereport.html\">MeasureReport</a></td><td/><td><div><p>The measure report being submitted</p>\n</div></td></tr><tr><td>IN</td><td>exportUrl</td><td>1..1</td><td><a href=\"http://hl7.org/fhir/R4/datatypes.html#url\">url</a></td><td/><td><div><p>The absolute URL of the bulk export endpoint of a Data Provider</p>\n</div></td></tr></table></div>"
+  ];
+  fhir:DomainResource.extension [
+     fhir:index 0;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm" ];
+     fhir:Extension.valueInteger [ fhir:value "0"^^xsd:integer ]
+  ], [
+     fhir:index 1;
+     fhir:Extension.url [ fhir:value "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status" ];
+     fhir:Extension.valueCode [ fhir:value "trial-use" ]
+  ];
+  fhir:OperationDefinition.url [ fhir:value "https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data"];
+  fhir:OperationDefinition.version [ fhir:value "4.0.1"];
+  fhir:OperationDefinition.name [ fhir:value "Bulk Submit Data"];
+  fhir:OperationDefinition.status [ fhir:value "draft"];
+  fhir:OperationDefinition.kind [ fhir:value "operation"];
+  fhir:OperationDefinition.date [ fhir:value "2022-03-02T12:03:33-05:00"^^xsd:dateTime];
+  fhir:OperationDefinition.publisher [ fhir:value "The MITRE Corporation"];
+  fhir:OperationDefinition.description [ fhir:value "The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the [Bulk Data Import Ping and Pull Approach](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md)."];
+  fhir:OperationDefinition.code [ fhir:value "submit-data"];
+  fhir:OperationDefinition.resource [
+     fhir:value "Measure";
+     fhir:index 0
+  ];
+  fhir:OperationDefinition.system [ fhir:value "false"^^xsd:boolean];
+  fhir:OperationDefinition.type [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.instance [ fhir:value "true"^^xsd:boolean];
+  fhir:OperationDefinition.parameter [
+     fhir:index 0;
+     fhir:OperationDefinition.parameter.name [ fhir:value "measureReport" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The measure report being submitted" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "MeasureReport" ]
+  ], [
+     fhir:index 1;
+     fhir:OperationDefinition.parameter.name [ fhir:value "exportUrl" ];
+     fhir:OperationDefinition.parameter.use [ fhir:value "in" ];
+     fhir:OperationDefinition.parameter.min [ fhir:value "1"^^xsd:integer ];
+     fhir:OperationDefinition.parameter.max [ fhir:value "1" ];
+     fhir:OperationDefinition.parameter.documentation [ fhir:value "The absolute URL of the bulk export endpoint of a Data Provider" ];
+     fhir:OperationDefinition.parameter.type [ fhir:value "url" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

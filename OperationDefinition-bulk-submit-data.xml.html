@@ -118,7 +118,7 @@
 <ul class="nav nav-tabs">
 
   <li>
-    <a href="OperationDefinition-measure-bulk-submit-data.html">Narrative Content</a>
+    <a href="OperationDefinition-bulk-submit-data.html">Narrative Content</a>
   </li>
 
 
@@ -131,14 +131,14 @@
 
   
     <li>
-      <a href="OperationDefinition-measure-bulk-submit-data.json.html">JSON</a>
+      <a href="OperationDefinition-bulk-submit-data.json.html">JSON</a>
     </li>
   
 
 
   
     <li>
-      <a href="OperationDefinition-measure-bulk-submit-data.ttl.html">TTL</a>
+      <a href="OperationDefinition-bulk-submit-data.ttl.html">TTL</a>
     </li>
   
 
@@ -170,7 +170,7 @@
   </table>
 
 
-<p><a href="OperationDefinition-measure-bulk-submit-data.xml" no-download="true">Raw xml</a> | <a download="null" href="OperationDefinition-measure-bulk-submit-data.xml">Download</a></p>
+<p><a href="OperationDefinition-bulk-submit-data.xml" no-download="true">Raw xml</a> | <a download="null" href="OperationDefinition-bulk-submit-data.xml">Download</a></p>
 
     <!-- insert intro if present -->
   
@@ -180,17 +180,13 @@
   <pre class="xml"><code class="language-xml">
 
 &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition">OperationDefinition</a> xmlns="http://hl7.org/fhir"&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="measure-bulk-submit-data"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="bulk-submit-data"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.text">text</a>&gt;
     &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="extensions"/&gt;
-    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;h2&gt;Bulk Submit Data&lt;/h2&gt;&lt;p&gt;OPERATION: Bulk Submit Data&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data&lt;/pre&gt;&lt;div&gt;&lt;p&gt;The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard &lt;a href="http://hl7.org/fhir/R4/operation-measure-submit-data.html"&gt;$submit-data requests&lt;/a&gt;, the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements.&lt;/p&gt;
-&lt;p&gt;Required header(s):&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;'prefer': 'respond-async'
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;&lt;p&gt;URL: [base]/Measure/$submit-data&lt;/p&gt;&lt;p&gt;URL: [base]/Measure/[id]/$submit-data&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;measureReport&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/measurereport.html"&gt;MeasureReport&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The measure report being submitted, which references the measure-of-interest by canonical URL&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;exportUrl&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#url"&gt;url&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The absolute URL of the bulk export endpoint of a bulk export server&lt;/p&gt;
-&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;div&gt;&lt;p&gt;The expected responses from the bulk submit-data operation match the expected responses for the standard &lt;a href="https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md"&gt;bulk import operation&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+    &lt;div xmlns="http://www.w3.org/1999/xhtml"&gt;&lt;h2&gt;Bulk Submit Data&lt;/h2&gt;&lt;p&gt;OPERATION: Bulk Submit Data&lt;/p&gt;&lt;p&gt;The official URL for this operation definition is: &lt;/p&gt;&lt;pre&gt;https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data&lt;/pre&gt;&lt;div&gt;&lt;p&gt;The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the &lt;a href="https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md"&gt;Bulk Data Import Ping and Pull Approach&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;URL: [base]/Measure/$submit-data&lt;/p&gt;&lt;p&gt;URL: [base]/Measure/[id]/$submit-data&lt;/p&gt;&lt;p&gt;Parameters&lt;/p&gt;&lt;table class="grid"&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Use&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Name&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Cardinality&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Type&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Binding&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Documentation&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;measureReport&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/measurereport.html"&gt;MeasureReport&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The measure report being submitted&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;IN&lt;/td&gt;&lt;td&gt;exportUrl&lt;/td&gt;&lt;td&gt;1..1&lt;/td&gt;&lt;td&gt;&lt;a href="http://hl7.org/fhir/R4/datatypes.html#url"&gt;url&lt;/a&gt;&lt;/td&gt;&lt;td/&gt;&lt;td&gt;&lt;div&gt;&lt;p&gt;The absolute URL of the bulk export endpoint of a Data Provider&lt;/p&gt;
+&lt;/div&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
   &lt;/text&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.extension">extension</a>
              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">url</a>="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm"&gt;
@@ -201,23 +197,16 @@
     &lt;<a href="http://hl7.org/fhir/R4/extensibility.html#Extension#Extension.value[x]">valueCode</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="trial-use"/&gt;
   &lt;/extension&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.url">url</a>
-       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data"/&gt;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>="https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.version">version</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="4.0.1"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.name">name</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="Bulk Submit Data"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="draft"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.kind">kind</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="operation"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2022-02-25T10:52:40-05:00"/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.date">date</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>="2022-03-02T12:03:33-05:00"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.publisher">publisher</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="The MITRE Corporation"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.description">description</a>
-               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard [$submit-data requests](http://hl7.org/fhir/R4/operation-measure-submit-data.html), the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements. 
-
-Required header(s):
-```
-&amp;#39;prefer&amp;#39;: &amp;#39;respond-async&amp;#39;
-```"/&gt;
+               <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the [Bulk Data Import Ping and Pull Approach](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md)."/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="submit-data"/&gt;
-  &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.comment">comment</a>
-           <a href="http://hl7.org/fhir/R4/datatypes.html#markdown">value</a>="The expected responses from the bulk submit-data operation match the expected responses for the standard [bulk import operation](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md)."/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.resource">resource</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="Measure"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="false"/&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">value</a>="true"/&gt;
@@ -227,8 +216,7 @@ Required header(s):
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.use">use</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="in"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="1"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
-    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="The measure report being submitted, which references the measure-of-interest by canonical URL"/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="The measure report being submitted"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="MeasureReport"/&gt;
   &lt;/parameter&gt;
   &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter">parameter</a>&gt;
@@ -237,7 +225,7 @@ Required header(s):
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.min">min</a> <a href="http://hl7.org/fhir/R4/datatypes.html#integer">value</a>="1"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.max">max</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="1"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.documentation">documentation</a>
-                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="The absolute URL of the bulk export endpoint of a bulk export server"/&gt;
+                   <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>="The absolute URL of the bulk export endpoint of a Data Provider"/&gt;
     &lt;<a href="http://hl7.org/fhir/R4/operationdefinition.html#OperationDefinition.parameter.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>="url"/&gt;
   &lt;/parameter&gt;
 &lt;/OperationDefinition&gt;</code></pre>
@@ -269,8 +257,8 @@ Required header(s):
     <div class="container">    <!-- container -->
 
       <div class="inner-wrapper">
-        <p><a name="l527">​</a>
-          IG &copy; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="null">The MITRE Corporation</a>.  Package bulk-submit-data#4.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 25, 2022 10:52-0500">2022-02-25</span>
+        <p><a name="l521">​</a>
+          IG &copy; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="null">The MITRE Corporation</a>.  Package bulk-submit-data#4.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 2, 2022 12:03-0500">2022-03-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

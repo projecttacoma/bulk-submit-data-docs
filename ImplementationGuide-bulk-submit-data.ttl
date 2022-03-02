@@ -16,7 +16,7 @@
   fhir:ImplementationGuide.version [ fhir:value "4.0.1"];
   fhir:ImplementationGuide.name [ fhir:value "BulkSubmitData"];
   fhir:ImplementationGuide.status [ fhir:value "draft"];
-  fhir:ImplementationGuide.date [ fhir:value "2022-02-25T10:52:40-05:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.date [ fhir:value "2022-03-02T12:03:33-05:00"^^xsd:dateTime];
   fhir:ImplementationGuide.publisher [ fhir:value "The MITRE Corporation"];
   fhir:ImplementationGuide.packageId [ fhir:value "bulk-submit-data"];
   fhir:ImplementationGuide.license [ fhir:value "CC0-1.0"];
@@ -286,11 +286,11 @@
          fhir:Extension.valueString [ fhir:value "OperationDefinition" ]
        ];
        fhir:ImplementationGuide.definition.resource.reference [
-         fhir:link <https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/measure-bulk-submit-data>;
-         fhir:Reference.reference [ fhir:value "OperationDefinition/measure-bulk-submit-data" ]
+         fhir:link <https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data>;
+         fhir:Reference.reference [ fhir:value "OperationDefinition/bulk-submit-data" ]
        ];
        fhir:ImplementationGuide.definition.resource.name [ fhir:value "Bulk Submit Data" ];
-       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard [$submit-data requests](http://hl7.org/fhir/R4/operation-measure-submit-data.html), the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements. \n\nRequired header(s):\n```\n'prefer': 'respond-async'\n```" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "OperationDefinition for the Bulk Submit Data operation" ];
        fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
      ];
      fhir:ImplementationGuide.definition.page [

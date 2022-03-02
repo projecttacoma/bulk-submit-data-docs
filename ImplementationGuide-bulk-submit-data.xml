@@ -9,7 +9,7 @@
   <version value="4.0.1"/>
   <name value="BulkSubmitData"/>
   <status value="draft"/>
-  <date value="2022-02-25T10:52:40-05:00"/>
+  <date value="2022-03-02T12:03:33-05:00"/>
   <publisher value="The MITRE Corporation"/>
   <packageId value="bulk-submit-data"/>
   <license value="CC0-1.0"/>
@@ -188,10 +188,10 @@
         <valueString value="OperationDefinition"/>
       </extension>
       <reference>
-        <reference value="OperationDefinition/measure-bulk-submit-data"/>
+        <reference value="OperationDefinition/bulk-submit-data"/>
       </reference>
       <name value="Bulk Submit Data"/>
-      <description value="The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard [$submit-data requests](http://hl7.org/fhir/R4/operation-measure-submit-data.html), the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements. &#xA;&#xA;Required header(s):&#xA;```&#xA;&#39;prefer&#39;: &#39;respond-async&#39;&#xA;```"/>
+      <description value="OperationDefinition for the Bulk Submit Data operation"/>
       <exampleBoolean value="false"/>
     </resource>
     <page>

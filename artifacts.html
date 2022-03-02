@@ -140,14 +140,10 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
          <tbody>
             <tr>
                <td style="column-width:30%">
-                  <a href="OperationDefinition-measure-bulk-submit-data.html" title="OperationDefinition/measure-bulk-submit-data">Bulk Submit Data</a>
+                  <a href="OperationDefinition-bulk-submit-data.html" title="OperationDefinition/bulk-submit-data">Bulk Submit Data</a>
                </td>
                <td>
-<p>The bulk submit-data operation completes a bulk import request based on the data requirements of a FHIR Measure. As with standard <a href="http://hl7.org/fhir/R4/operation-measure-submit-data.html">$submit-data requests</a>, the submitted data must include one MeasureReport resource, and the requests are kicked off using the $submit-data endpoint. However, for a bulk submit-data request, the MeasureReport references the measure-of-interest by canonical URL. It is assumed that the data-of-interest for the measure-of-interest is already stored on the server. If the “prefer”: “respond-async” request header is provided, the data requirements will be retrieved for the measure-of-interest, and a modified bulk import request will kick off using the $import endpoint to import the data that fulfills the data requirements.</p>
-
-<p>Required header(s):</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>'prefer': 'respond-async'
-</code></pre></div></div>
+<p>OperationDefinition for the Bulk Submit Data operation</p>
 </td>
             </tr>
          </tbody>
@@ -176,8 +172,8 @@ h6:before{color:silver;counter-increment:more-detail;content:var(--heading-prefi
     <div class="container">    <!-- container -->
 
       <div class="inner-wrapper">
-        <p><a name="l326">​</a>
-          IG &copy; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="null">The MITRE Corporation</a>.  Package bulk-submit-data#4.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Fri, Feb 25, 2022 10:52-0500">2022-02-25</span>
+        <p><a name="l314">​</a>
+          IG &copy; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="null">The MITRE Corporation</a>.  Package bulk-submit-data#4.0.1 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Wed, Mar 2, 2022 12:03-0500">2022-03-02</span>
           <br/>
           <span style="color: var(--footer-highlight-text-color)"></span>
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |

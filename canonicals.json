@@ -7,9 +7,9 @@
     "name": "BulkSubmitData"
   },
   {
-    "id": "measure-bulk-submit-data",
+    "id": "bulk-submit-data",
     "type": "OperationDefinition",
-    "url": "https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/Operation-measure-bulk-submit-data",
+    "url": "https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data",
     "version": "4.0.1",
     "name": "Bulk Submit Data"
   }
