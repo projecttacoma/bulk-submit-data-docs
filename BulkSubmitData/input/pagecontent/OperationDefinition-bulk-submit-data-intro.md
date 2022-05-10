@@ -44,3 +44,69 @@ Response:
 ```
 HTTP/1.1 202 Accepted
 ```
+
+Request: Submit data of interest related to patients in the group "testGroup" for FHIR Measure with "testMeasure" identifier from the Data Provider http://example.com/. Group "testGroup" must exist on the export server.
+
+```
+POST [base]/Measure/testMeasure/$submit-data
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "exportUrl",
+      "valueUrl": "http://example.com/Group/testGroup/$export"
+    },
+    {
+      "name": "measureReport",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "measurereport-testMeasure",
+        "measure": "http://example.com/Measure/testMeasure"
+      }
+    }
+  ]
+}
+```
+
+Response:
+
+```
+HTTP/1.1 202 Accepted
+```
+
+Request: Submit all FHIR Observations and Procedures of interest for FHIR Measure with "testMeasure" identifier from the Data Provider http://example.com/.
+
+```
+POST [base]/Measure/testMeasure/$submit-data
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "exportUrl",
+      "valueUrl": "http://example.com/$export"
+    },
+    {
+      "name": "_type",
+      "valueString": "Observation"
+    },
+        {
+      "name": "_type",
+      "valueString": "Procedure"
+    },
+    {
+      "name": "measureReport",
+      "resource": {
+        "resourceType": "MeasureReport",
+        "id": "measurereport-testMeasure",
+        "measure": "http://example.com/Measure/testMeasure"
+      }
+    }
+  ]
+}
+```
+
+Response:
+
+```
+HTTP/1.1 202 Accepted
+```
