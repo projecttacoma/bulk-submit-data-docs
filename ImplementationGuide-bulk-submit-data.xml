@@ -9,7 +9,7 @@
   <version value="4.0.1"/>
   <name value="BulkSubmitData"/>
   <status value="draft"/>
-  <date value="2022-03-02T12:03:33-05:00"/>
+  <date value="2022-09-17T11:45:33-04:00"/>
   <publisher value="The MITRE Corporation"/>
   <packageId value="bulk-submit-data"/>
   <license value="CC0-1.0"/>
@@ -178,6 +178,14 @@
     <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
       <extension url="code">
         <valueString value="propagate-status"/>
+      </extension>
+      <extension url="value">
+        <valueString value="true"/>
+      </extension>
+    </extension>
+    <extension url="http://hl7.org/fhir/tools/StructureDefinition/ig-parameter">
+      <extension url="code">
+        <valueString value="excludelogbinaryformat"/>
       </extension>
       <extension url="value">
         <valueString value="true"/>

@@ -6,6 +6,8 @@
     <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>Bulk Submit Data</h2><p>OPERATION: Bulk Submit Data</p><p>The official URL for this operation definition is: </p><pre>https://projecttacoma.github.io/bulk-submit-data-docs/OperationDefinition/bulk-submit-data</pre><div><p>The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the <a href="https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md">Bulk Data Import Ping and Pull Approach</a>.</p>
 </div><p>URL: [base]/Measure/$submit-data</p><p>URL: [base]/Measure/[id]/$submit-data</p><p>Parameters</p><table class="grid"><tr><td><b>Use</b></td><td><b>Name</b></td><td><b>Cardinality</b></td><td><b>Type</b></td><td><b>Binding</b></td><td><b>Documentation</b></td></tr><tr><td>IN</td><td>measureReport</td><td>1..1</td><td><a href="http://hl7.org/fhir/R4/measurereport.html">MeasureReport</a></td><td/><td><div><p>The measure report being submitted</p>
 </div></td></tr><tr><td>IN</td><td>exportUrl</td><td>1..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#url">url</a></td><td/><td><div><p>The absolute URL of the bulk export endpoint of a Data Provider</p>
+</div></td></tr><tr><td>IN</td><td>_type</td><td>0..*</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#string">string</a></td><td/><td><div><p>(Optional) Restrict the data exported to only be specific FHIR resource types. See <a href="https://hl7.org/fhir/uv/bulkdata/export/index.html#query-parameters">the bulk data $export spec</a> for more information on '_type'</p>
+</div></td></tr><tr><td>IN</td><td>useTypeFilters</td><td>0..1</td><td><a href="http://hl7.org/fhir/R4/datatypes.html#boolean">boolean</a></td><td/><td><div><p>(Optional) If enabled, data exported by the 'exportUrl' system will be filtered according to the data requirements of the Measure. Requires support of the _typeFilter expiremental parameter in the export server. See <a href="https://hl7.org/fhir/uv/bulkdata/export/index.html#example-request-with-_typefilter">the bulk data $export spec</a> for more information on '_typeFilter'</p>
 </div></td></tr></table></div>
   </text>
   <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
@@ -19,7 +21,7 @@
   <name value="Bulk Submit Data"/>
   <status value="draft"/>
   <kind value="operation"/>
-  <date value="2022-03-02T12:03:33-05:00"/>
+  <date value="2022-09-17T11:45:33-04:00"/>
   <publisher value="The MITRE Corporation"/>
   <description value="The bulk submit-data operation sends a bulk import request based on the data requirements of a FHIR Measure. This operation is modeled off the existing draft of the [Bulk Data Import Ping and Pull Approach](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md)."/>
   <code value="submit-data"/>
@@ -42,5 +44,21 @@
     <max value="1"/>
     <documentation value="The absolute URL of the bulk export endpoint of a Data Provider"/>
     <type value="url"/>
+  </parameter>
+  <parameter>
+    <name value="_type"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="*"/>
+    <documentation value="(Optional) Restrict the data exported to only be specific FHIR resource types. See [the bulk data $export spec](https://hl7.org/fhir/uv/bulkdata/export/index.html#query-parameters) for more information on &#39;_type&#39;"/>
+    <type value="string"/>
+  </parameter>
+  <parameter>
+    <name value="useTypeFilters"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="(Optional) If enabled, data exported by the &#39;exportUrl&#39; system will be filtered according to the data requirements of the Measure. Requires support of the _typeFilter expiremental parameter in the export server. See [the bulk data $export spec](https://hl7.org/fhir/uv/bulkdata/export/index.html#example-request-with-_typefilter) for more information on &#39;_typeFilter&#39;"/>
+    <type value="boolean"/>
   </parameter>
 </OperationDefinition>
