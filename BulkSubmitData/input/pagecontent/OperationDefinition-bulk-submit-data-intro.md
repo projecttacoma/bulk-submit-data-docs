@@ -1,6 +1,6 @@
 ## Operation Request Body
 
-The request body for this operation is a [FHIR Parameters Resource](https://www.hl7.org/fhir/parameters.html). The body SHALL include a FHIR MeasureReport Resource of type “data-collection” that references a measure by canonical URL. Additionally, the FHIR Parameters resource SHALL include the URL of a Data Provider, as defined in the [Bulk Data Import Ping and Pull Approach](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md#bulk-data-import-kick-off-request-ping-from-data-provider-to-data-consumer). The Data Provider SHALL support `$export`. It is assumed that the data-of-interest for the measure referenced in the MeasureReport lives on the Data Provider server.
+The request body for this operation is a [FHIR Parameters Resource](https://www.hl7.org/fhir/parameters.html). The body SHALL include a FHIR MeasureReport Resource of type `data-collection` that references a measure by canonical URL. Additionally, the FHIR Parameters resource SHALL include the URL of a Data Provider, as defined in the [Bulk Data Import Ping and Pull Approach](https://github.com/smart-on-fhir/bulk-import/blob/master/import-pnp.md#bulk-data-import-kick-off-request-ping-from-data-provider-to-data-consumer). The Data Provider SHALL support `$export`. It is assumed that the data-of-interest for the measure referenced in the MeasureReport lives on the Data Provider server.
 
 ### Request Flow
 
@@ -16,10 +16,10 @@ Required header(s):
 
 ### Examples
 
-Request: Submit data of interest for FHIR Measure with "testMeasure" identifier from the Data Provider http://example.com/
+Request: Submit data of interest for FHIR Measure with "test-measure" identifier from the Data Provider http://example.com/
 
 ```
-POST [base]/Measure/testMeasure/$submit-data
+POST [base]/Measure/test-measure/$submit-data
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -31,8 +31,13 @@ POST [base]/Measure/testMeasure/$submit-data
       "name": "measureReport",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "measurereport-testMeasure",
-        "measure": "http://example.com/Measure/testMeasure"
+        "type": "data-collection,
+        "status": "pending",
+        "measure": "http://example.com/Measure/test-measure",
+        "period": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        }
       }
     }
   ]
@@ -45,23 +50,28 @@ Response:
 HTTP/1.1 202 Accepted
 ```
 
-Request: Submit data of interest related to patients in the group "testGroup" for FHIR Measure with "testMeasure" identifier from the Data Provider http://example.com/. Group "testGroup" must exist on the export server.
+Request: Submit data of interest related to patients in the group "test-group" for FHIR Measure with id "test-measure" from the Data Provider http://example.com/. Group "test-group" must exist on the export server.
 
 ```
-POST [base]/Measure/testMeasure/$submit-data
+POST [base]/Measure/test-measure/$submit-data
 {
   "resourceType": "Parameters",
   "parameter": [
     {
       "name": "exportUrl",
-      "valueUrl": "http://example.com/Group/testGroup/$export"
+      "valueUrl": "http://example.com/Group/test-group/$export"
     },
     {
       "name": "measureReport",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "measurereport-testMeasure",
-        "measure": "http://example.com/Measure/testMeasure"
+        "type": "data-collection,
+        "status": "pending",
+        "measure": "http://example.com/Measure/test-measure",
+        "period": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        }
       }
     }
   ]
@@ -74,10 +84,10 @@ Response:
 HTTP/1.1 202 Accepted
 ```
 
-Request: Submit all FHIR Observations and Procedures of interest for FHIR Measure with "testMeasure" identifier from the Data Provider http://example.com/.
+Request: Submit all FHIR Observations and Procedures of interest for FHIR Measure with id "test-measure" from the Data Provider http://example.com/.
 
 ```
-POST [base]/Measure/testMeasure/$submit-data
+POST [base]/Measure/test-measure/$submit-data
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -89,7 +99,7 @@ POST [base]/Measure/testMeasure/$submit-data
       "name": "_type",
       "valueString": "Observation"
     },
-        {
+    {
       "name": "_type",
       "valueString": "Procedure"
     },
@@ -97,8 +107,13 @@ POST [base]/Measure/testMeasure/$submit-data
       "name": "measureReport",
       "resource": {
         "resourceType": "MeasureReport",
-        "id": "measurereport-testMeasure",
-        "measure": "http://example.com/Measure/testMeasure"
+        "type": "data-collection,
+        "status": "pending",
+        "measure": "http://example.com/Measure/test-measure",
+        "period": {
+          "start": "2022-01-01",
+          "end": "2022-12-31"
+        }
       }
     }
   ]
