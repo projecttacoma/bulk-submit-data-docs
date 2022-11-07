@@ -25,11 +25,22 @@ Description: "OperationDefinition for the Bulk Submit Data operation"
 * parameter[=].documentation = "The measure report being submitted"
 * parameter[=].type = #MeasureReport
 
+* parameter[+].name = #exportType
+* parameter[=].use = #in
+* parameter[=].min = 0
+* parameter[=].max = "1"
+* parameter[=].documentation = "(Optional) String of `static` or `dynamic`. Defaults to `dynamic` if omitted.
+
+If the value is `dynamic`, the Data Consumer will issue a POST request to the `exportUrl` to obtain a dataset from the Data Provider.
+
+If the value is `static`, the Data Consumer will issue a GET request to the `exportUrl` to retrieve a Bulk Data manifest file with the location of the Bulk Data files."
+* parameter[=].type = #code
+
 * parameter[+].name = #exportUrl
 * parameter[=].use = #in
 * parameter[=].min = 1
 * parameter[=].max = "1"
-* parameter[=].documentation = "The absolute URL of the bulk export endpoint of a Data Provider"
+* parameter[=].documentation = "The absolute URL of the bulk export endpoint of a Data Provider (if the `exportType` parameter is `dynamic`) OR the location of a FHIR Bulk Data Export manifest file (if the `exportType` parameter is `static`)"
 * parameter[=].type = #url
 
 * parameter[+].name = #_type
@@ -43,5 +54,5 @@ Description: "OperationDefinition for the Bulk Submit Data operation"
 * parameter[=].use = #in
 * parameter[=].min = 0
 * parameter[=].max = "1"
-* parameter[=].documentation = "(Optional) If enabled, data exported by the 'exportUrl' system will be filtered according to the data requirements of the Measure. Requires support of the _typeFilter expiremental parameter in the export server. See [the bulk data $export spec](https://hl7.org/fhir/uv/bulkdata/export/index.html#example-request-with-_typefilter) for more information on '_typeFilter'"
+* parameter[=].documentation = "(Optional) If enabled, data exported by the 'exportUrl' system will be filtered according to the data requirements of the Measure. Requires support of the _typeFilter experimental parameter in the export server. See [the bulk data $export spec](https://hl7.org/fhir/uv/bulkdata/export/index.html#example-request-with-_typefilter) for more information on '_typeFilter'"
 * parameter[=].type = #boolean
