@@ -4,7 +4,7 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: bulk-submit-data
-canonical: http://hl7.org/fhir/us/davinci-deqm
+canonical: https://projecttacoma.github.io/bulk-submit-data-docs
 name: BulkSubmitData
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
