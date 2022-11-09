@@ -13,6 +13,7 @@ Required header(s):
 ```
 "prefer": "respond-async"
 ```
+Specifies whether the response is immediate or asynchronous.
 
 ### Examples
 
@@ -26,6 +27,10 @@ POST [base]/Measure/test-measure/$submit-data
     {
       "name": "exportUrl",
       "valueUrl": "http://example.com/$export"
+    },
+    {
+      "name": "exportType",
+      "valueCode": "dynamic"
     },
     {
       "name": "measureReport",
